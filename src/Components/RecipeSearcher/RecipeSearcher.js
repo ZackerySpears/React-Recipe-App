@@ -10,15 +10,21 @@ class RecipeSearcher extends Component {
         
     }
 
+    componentDidMount() {
+        this.getRandomRecipe();
+    }
 
     getRandomRecipe = () => {
+
+        const _this = this;
+
        axios({
            /* We can configure everything we need to about the HTTP request in here */ 
            method:'GET',
            url: 'https://www.themealdb.com/api/json/v1/1/random.php',
        }) 
        .then(function(response) {
-           console.log(response);
+            _this.setState({ recipes: response.data.meals || [] })
        })
        .catch(function(error) {
             console.log(error);
@@ -27,6 +33,9 @@ class RecipeSearcher extends Component {
     }
 
     getRecipeByName = (name) => {
+
+        const _this = this;
+
         axios({
             method:'GET',
             url: 'https://www.themealdb.com/api/json/v1/1/search.php',
@@ -35,7 +44,7 @@ class RecipeSearcher extends Component {
             }
         })
         .then(function(response){
-            console.log(response);
+            _this.setState({ recipes: response.data.meals || [] })
         })
         .catch(function(error){
             console.log(error);
@@ -43,6 +52,9 @@ class RecipeSearcher extends Component {
     }
 
     getRecipeByLetter = (letter) => {
+
+        const _this = this;
+
         axios ({
             method: 'GET',
             url: 'https://www.themealdb.com/api/json/v1/1/search.php',
@@ -51,7 +63,7 @@ class RecipeSearcher extends Component {
             }
         })
         .then(function(response){
-            console.log(response);
+            _this.setState({ recipes: response.data.meals || [] })
         })
         .catch(function(error){
             console.log(error);
@@ -62,8 +74,6 @@ class RecipeSearcher extends Component {
 
         return (
             <div>
-                <h1>Hello</h1>
-                <h2>how was your day</h2>
             </div>
         );
     }
