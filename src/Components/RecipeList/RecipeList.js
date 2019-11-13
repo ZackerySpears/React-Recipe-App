@@ -6,8 +6,8 @@ class RecipeList extends Component {
     getListItems() {
         return this.props.recipes.map((recipe) => 
             <li key={recipe.idMeal}> 
-                <h1>{recipe.strMeal}</h1>
-                <h2>{recipe.strArea}</h2>
+                <h1 className='meal'>{recipe.strMeal}</h1>
+                <h2 className='country'>{recipe.strArea}</h2>
                 <img src={recipe.strMealThumb} alt={recipe.strMeal}/>
                 <a className='youtube' href={recipe.strYoutube} target="_blank">Youtube Instructions</a>
                 <p>{recipe.strInstructions}</p>
@@ -36,8 +36,7 @@ class RecipeList extends Component {
     render() {
         return(
             <ul>{this.getListItems()}</ul>
-        );
-        
+        )
     }
 }
 

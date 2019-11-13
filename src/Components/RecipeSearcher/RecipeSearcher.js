@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import RecipeList from '../RecipeList/RecipeList';
 import Header from '../Header/Header';
+import './RecipeSearcher.css'
 
 class RecipeSearcher extends Component {
 
@@ -76,8 +77,13 @@ class RecipeSearcher extends Component {
 
         return (
             <div>
-                <Header />
+                <Header 
+                    randomRecipeHandler={this.getRandomRecipe}
+                    recipeByLetterHandler={this.getRecipeByLetter}
+                    recipeByNameHandler={this.getRecipeByName}
+                />
                <RecipeList recipes={this.state.recipes}/>
+               <a className='apiWebsite'href='https://www.themealdb.com/' target='_blank'>TheMealHB.com</a>
             </div>
         );
     }

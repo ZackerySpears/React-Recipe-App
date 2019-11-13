@@ -1,11 +1,23 @@
+.meal {
+    font-weight: bold;
+}
 
+.country {
+    font-style: italic;
+}
+
+img {
+    border-radius: 5px;
+}
 .youtube{
     display: block;
     color: red;
     font-size: 20pt;
+    margin-top:10px ;
 }
 
 .youtube:focus {
     color: forestgreen;
 }
+
 
