@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './RecipeList.css'
 
 class RecipeList extends Component {
 
@@ -7,8 +8,8 @@ class RecipeList extends Component {
             <li key={recipe.idMeal}> 
                 <h1>{recipe.strMeal}</h1>
                 <h2>{recipe.strArea}</h2>
-                <a href={recipe.strYoutube} target="_blank">Youtube</a>
-                <img src={recipe.strMealThumb} alt={recipe.strMeal} />
+                <img src={recipe.strMealThumb} alt={recipe.strMeal}/>
+                <a className='youtube' href={recipe.strYoutube} target="_blank">Youtube Instructions</a>
                 <p>{recipe.strInstructions}</p>
                 <ul>
                     {this.getIngredientsList(recipe)}
@@ -25,7 +26,7 @@ class RecipeList extends Component {
             const ingredientIdentifier = 'strIngredient' + i;
             const amountIdentifier = 'strMeasure' + i;
             if (recipe[ingredientIdentifier] !== '' && recipe [ingredientIdentifier] !== null) {
-            output.push(<li>{recipe[ingredientIdentifier]}: {recipe[amountIdentifier]}</li>);
+            output.push(<li key={i}>{recipe[ingredientIdentifier]}: {recipe[amountIdentifier]}</li>);
             }
         }
 
