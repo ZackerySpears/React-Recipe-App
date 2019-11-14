@@ -1,0 +1,25 @@
+.aboutH1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 40pt;
+    text-decoration: underline;
+}
+
+.aboutP {
+    font-size: 20pt;
+}
+
+.aboutH1, .aboutP {
+    text-align: center;
+}
+
+.apiWebsite {
+    color: red;
+}
+
+.apiWebsite:focus {
+    color:forestgreen;
+}
+
+.aboutImage {
+    width: 100%;
+}
